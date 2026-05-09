@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <Arduino.h>
 
 constexpr int ledPin = 13;
 constexpr int stackSize = 10; /* allow 10 elements on the operation stack */
@@ -28,8 +29,8 @@ void pushStack(Stack *stack, const char value){
 		printf("FULL!! CANNOT INSERT %d... STACK FULL... RESETTING STACK... ALL VALUES ARE LOST", value);
 		resetStack(stack, stackSize);
 	} else {
-		stack->data[stack->top] = value;
 		stack->top++;
+		stack->data[stack->top] = value;
 	}
 }
 
@@ -54,13 +55,20 @@ void operation() {
 }
 
 /* MAIN FUNCTIONS START */
+// just for testing
+// int main() {
+// 	return 0;
+// }
 
-int main() {
-	return 0;
+void setup() {
+	pinMode(13, OUTPUT);
 }
-
-void setup(){}
-void loop(){}
+void loop() {
+	digitalWrite(ledPin, HIGH);
+	delay(50);
+	digitalWrite(ledPin, LOW);
+	delay(50);
+}
 
 
 /* MAIN FUNCTIONS END */

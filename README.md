@@ -9,11 +9,10 @@ Natural numbers # (including 0?) <- yes, as we are in the realm of computers (jk
 ---
 OPERATORS:
 ```bash
-*    # multiplication
 -    # minus
 +    # plus
-/    # division by
-=    # concludes the expression
+*    # multiplication
+/    # division
 ```
 
 
@@ -26,7 +25,10 @@ Example: You are the human and want to calculate 5 * 3.
 6. Press button 2 to conclude input
 
 General structure of buttons:
+
 Button 1: Inputs for entering operands and specifying numbers
+
+Button 2: For going to next step of defining the equation.
 
 ---
 STACK
