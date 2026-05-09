@@ -9,7 +9,7 @@ constexpr int stackSize = 10; /* allow 10 elements on the operation stack */
  */
 
 /* Stack used to hold operands and operators
- * Stack is held in char array, for storing the operators (* - + /)
+ * Stack is held in char array, for storing the operators (* - + /) as well as the numbers (0-9)
  */
 typedef struct stack_t {
 	char data[stackSize];
@@ -33,7 +33,7 @@ void pushStack(Stack *stack, const int value){
 	}
 }
 
-void popStack(Stack *stack, int *retBuffer){
+void popStack(Stack *stack, char *retBuffer){
 	if (stack->top == -1) {
 		std::cout << "EMPTY!! CANNOT POP!!!" << std::endl;
 		resetStack(stack, stackSize);
