@@ -1,4 +1,4 @@
-#include <iostream>
+#include <stdio.h>
 
 constexpr int ledPin = 13;
 constexpr int stackSize = 10; /* allow 10 elements on the operation stack */
@@ -23,9 +23,9 @@ void resetStack(Stack *stack, int size){
 	stack->top = -1;
 }
 
-void pushStack(Stack *stack, const int value){
+void pushStack(Stack *stack, const char value){
 	if (stack->top == stackSize - 1) {
-		std::cout << "FULL!! CANNOT INSERT " << value << "... STACK FULL... RESETTING STACK... ALL VALUES ARE LOST"<< std::endl;
+		printf("FULL!! CANNOT INSERT %d... STACK FULL... RESETTING STACK... ALL VALUES ARE LOST", value);
 		resetStack(stack, stackSize);
 	} else {
 		stack->data[stack->top] = value;
@@ -35,7 +35,7 @@ void pushStack(Stack *stack, const int value){
 
 void popStack(Stack *stack, char *retBuffer){
 	if (stack->top == -1) {
-		std::cout << "EMPTY!! CANNOT POP!!!" << std::endl;
+		printf("NOTHING TO POP");
 		resetStack(stack, stackSize);
 	} else {
 		*retBuffer = stack->data[stack->top];
@@ -58,6 +58,9 @@ void operation() {
 int main() {
 	return 0;
 }
+
+void setup(){}
+void loop(){}
 
 
 /* MAIN FUNCTIONS END */
