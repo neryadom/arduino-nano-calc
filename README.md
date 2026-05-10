@@ -31,9 +31,10 @@ Button 1: Inputs for entering operands and specifying numbers
 Button 2: For going to next step of defining the equation.
 
 ---
-STACK
+QUEUE
 ```bash
 char data[size_t]    # defined as char array to allow placing operands AND operators on it.
-int top              # top of stack.
+int tail             # back of queue.
+int head             # front of queue
 ```
 
