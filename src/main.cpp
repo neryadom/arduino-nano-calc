@@ -2,61 +2,90 @@
 #include <Arduino.h>
 
 constexpr int ledPin = 13;
-constexpr int stackSize = 10; /* allow 10 elements on the operation stack */
+constexpr int queueSize = 10; /* allow 10 elements on the operation queue */
 
 
-/* STACK DEFINITION & METHODS START
- * The stack is used to hold operands and operators
+/* QUEUE DEFINITION & METHODS START
+ * The queue is used to hold operands and operators
  */
 
-/* Stack used to hold operands and operators
- * Stack is held in char array, for storing the operators (* - + /) as well as the numbers (0-9)
+/* Queue used to hold operands and operators
+ * Queue data is held in char array, for storing the operators (* - + /) as well as the numbers (0-9)
  */
-typedef struct stack_t {
-	char data[stackSize];
-	int top;
-} Stack;
+typedef struct queue_t {
+	char data[queueSize];
+	int head;
+	int tail;
+} Queue;
 
-void resetStack(Stack *stack, int size){
-	for (int i = 0; i < size; i++){
-		stack->data[i] = 0;
+void resetQueue(Queue *queue){
+	for (int i = 0; i < queueSize; i++){
+		queue->data[i] = '.';
 	}
-	stack->top = -1;
+	queue->head = -1;
+	queue->tail = -1;
 }
 
-void pushStack(Stack *stack, const char value){
-	if (stack->top == stackSize - 1) {
-		printf("FULL!! CANNOT INSERT %d... STACK FULL... RESETTING STACK... ALL VALUES ARE LOST", value);
-		resetStack(stack, stackSize);
+void pushQueueTail(Queue *queue, const char value){
+	if ((queue->tail + 1 % queueSize) == queue->head) {
+		printf("FULL!! CANNOT INSERT %d... QUEUE FULL... RESETTING QUEUE... ALL VALUES ARE LOST\n", value);
+		resetQueue(queue);
 	} else {
-		stack->top++;
-		stack->data[stack->top] = value;
+		queue->tail = (queue->tail + 1) % queueSize;
+		queue->data[queue->tail] = value;
+		if (queue->head == -1) queue->head = 0;
 	}
 }
 
-void popStack(Stack *stack, char *retBuffer){
-	if (stack->top == -1) {
-		printf("NOTHING TO POP");
-		resetStack(stack, stackSize);
+void popQueueHead(Queue *queue, char *retBuffer){
+	if (queue->tail == queue->head) {
+		printf("QUEUE EMPTY\n");
+		resetQueue(queue);
 	} else {
-		*retBuffer = stack->data[stack->top];
-		stack->data[stack->top] = 0;
-		stack->top--;
+		*retBuffer = queue->data[queue->head];
+		queue->data[queue->head] = '.';
+		queue->head = queue->head + 1 % queueSize;
 	}
+}
+
+void printQueue(Queue *queue) {
+	printf("\nPRINTING QUEUE START\n");
+	for (int i = 0; i < queueSize; i++) {
+		printf("%c ", queue->data[i]);
+	}
+	printf("\nPRINTING QUEUE END\n");
 }
 /*
  *
-STACK DEFINITION & METHODS END */
+QUEUE DEFINITION & METHODS END */
 
-
-void operation() {
-	Stack stack;
-	resetStack(&stack, stackSize);
-}
 
 /* MAIN FUNCTIONS START */
-// just for testing
 // int main() {
+// 	Queue queue;
+// 	resetQueue(&queue);
+// 	printQueue(&queue);
+// 	pushQueueTail(&queue, '5');
+// 	pushQueueTail(&queue, '*');
+// 	pushQueueTail(&queue, '3');
+// 	pushQueueTail(&queue, '=');
+// 	printQueue(&queue);
+// 	char buffer;
+// 	popQueueHead(&queue, &buffer);
+// 	printf("Popped from head: %c", buffer);
+// 	printQueue(&queue);
+// 	popQueueHead(&queue, &buffer);
+// 	printf("Popped from head: %c", buffer);
+// 	printQueue(&queue);
+// 	popQueueHead(&queue, &buffer);
+// 	printf("Popped from head: %c", buffer);
+// 	printQueue(&queue);
+// 	popQueueHead(&queue, &buffer);
+// 	printf("Popped from head: %c", buffer);
+// 	printQueue(&queue);
+// 	popQueueHead(&queue, &buffer);
+// 	printf("Popped from head: %c", buffer);
+// 	printQueue(&queue);
 // 	return 0;
 // }
 
