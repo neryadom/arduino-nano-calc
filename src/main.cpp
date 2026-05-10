@@ -27,8 +27,8 @@ void resetQueue(Queue *queue){
 }
 
 void pushQueueTail(Queue *queue, const char value){
-	if ((queue->tail + 1 % queueSize) == queue->head) {
-		printf("FULL!! CANNOT INSERT %d... QUEUE FULL... RESETTING QUEUE... ALL VALUES ARE LOST\n", value);
+	if ((queue->tail + 1) % queueSize == queue->head) {
+		printf("FULL!! CANNOT INSERT %c... QUEUE FULL... RESETTING QUEUE... ALL VALUES ARE LOST\n", value);
 		resetQueue(queue);
 	} else {
 		queue->tail = (queue->tail + 1) % queueSize;
@@ -37,15 +37,19 @@ void pushQueueTail(Queue *queue, const char value){
 	}
 }
 
-void popQueueHead(Queue *queue, char *retBuffer){
-	if (queue->tail == queue->head) {
-		printf("QUEUE EMPTY\n");
-		resetQueue(queue);
-	} else {
-		*retBuffer = queue->data[queue->head];
-		queue->data[queue->head] = '.';
-		queue->head = queue->head + 1 % queueSize;
-	}
+void popQueueHead(Queue *queue, char *retBuffer) {
+    if (queue->head == -1) {
+        printf("QUEUE EMPTY");
+        return;
+    }
+    *retBuffer = queue->data[queue->head];
+    queue->data[queue->head] = '.';
+    if (queue->head == queue->tail) {
+        queue->head = -1;
+        queue->tail = -1;
+    } else {
+        queue->head = (queue->head + 1) % queueSize;
+    }
 }
 
 void printQueue(Queue *queue) {
