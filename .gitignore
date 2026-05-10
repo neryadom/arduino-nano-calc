@@ -10,3 +10,7 @@ main
 #python stuff
 venv/
 .venv/
+
+
+#platformio stuff
+.pio
