@@ -5,6 +5,7 @@ main
 
 #usual
 .idea/
+.idea/*
 
 
 #python stuff
