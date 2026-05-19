@@ -150,13 +150,25 @@
         "output": ".pio\\build\\uno\\FrameworkArduino\\wiring_shift.c.o"
     },
     {
-        "command": "C:\\Users\\henri\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\src\\bobbersQueue.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Iinclude -Isrc -IC:\\Users\\henri\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\henri\\.platformio\\packages\\framework-arduino-avr\\variants\\standard src\\bobbersQueue.cpp",
+        "command": "C:\\Users\\henri\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\libf24\\LiquidCrystal\\LiquidCrystal.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -I.pio\\libdeps\\uno\\LiquidCrystal\\src -IC:\\Users\\henri\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\henri\\.platformio\\packages\\framework-arduino-avr\\variants\\standard .pio\\libdeps\\uno\\LiquidCrystal\\src\\LiquidCrystal.cpp",
+        "directory": "C:\\Users\\henri\\Desktop\\Arduino\\arduino-nano-calc",
+        "file": ".pio\\libdeps\\uno\\LiquidCrystal\\src\\LiquidCrystal.cpp",
+        "output": ".pio\\build\\uno\\libf24\\LiquidCrystal\\LiquidCrystal.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\henri\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\src\\bobbersCalcDisplay.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Iinclude -Isrc -I.pio\\libdeps\\uno\\LiquidCrystal\\src -IC:\\Users\\henri\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\henri\\.platformio\\packages\\framework-arduino-avr\\variants\\standard src\\bobbersCalcDisplay.cpp",
+        "directory": "C:\\Users\\henri\\Desktop\\Arduino\\arduino-nano-calc",
+        "file": "src\\bobbersCalcDisplay.cpp",
+        "output": ".pio\\build\\uno\\src\\bobbersCalcDisplay.cpp.o"
+    },
+    {
+        "command": "C:\\Users\\henri\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\src\\bobbersQueue.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Iinclude -Isrc -I.pio\\libdeps\\uno\\LiquidCrystal\\src -IC:\\Users\\henri\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\henri\\.platformio\\packages\\framework-arduino-avr\\variants\\standard src\\bobbersQueue.cpp",
         "directory": "C:\\Users\\henri\\Desktop\\Arduino\\arduino-nano-calc",
         "file": "src\\bobbersQueue.cpp",
         "output": ".pio\\build\\uno\\src\\bobbersQueue.cpp.o"
     },
     {
-        "command": "C:\\Users\\henri\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\src\\main.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Iinclude -Isrc -IC:\\Users\\henri\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\henri\\.platformio\\packages\\framework-arduino-avr\\variants\\standard src\\main.cpp",
+        "command": "C:\\Users\\henri\\.platformio\\packages\\toolchain-atmelavr\\bin\\avr-g++.exe -o .pio\\build\\uno\\src\\main.cpp.o -c -fno-exceptions -fno-threadsafe-statics -fpermissive -std=gnu++11 -mmcu=atmega328p -Os -Wall -ffunction-sections -fdata-sections -flto -DPLATFORMIO=60119 -DARDUINO_AVR_UNO -DF_CPU=16000000L -DARDUINO_ARCH_AVR -DARDUINO=10808 -Iinclude -Isrc -I.pio\\libdeps\\uno\\LiquidCrystal\\src -IC:\\Users\\henri\\.platformio\\packages\\framework-arduino-avr\\cores\\arduino -IC:\\Users\\henri\\.platformio\\packages\\framework-arduino-avr\\variants\\standard src\\main.cpp",
         "directory": "C:\\Users\\henri\\Desktop\\Arduino\\arduino-nano-calc",
         "file": "src\\main.cpp",
         "output": ".pio\\build\\uno\\src\\main.cpp.o"
