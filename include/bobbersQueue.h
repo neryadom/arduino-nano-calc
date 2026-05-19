@@ -17,9 +17,16 @@ typedef struct queue_t {
 } Queue;
 
 
+/* Sets all elements in a queue with the period sign '.' and then resets the tail and head to -1 */
 void resetQueue(Queue *queue);
+
+/* Adds value to the tail of the queue. If Queue is full, then it is wiped with resetQueue */
 void pushQueueTail(Queue *queue, char value);
+
+/* Places tail value of the queue into a buffer, then removes the tail from the Queue. */
 void popQueueHead(Queue *queue, char *retBuffer);
+
+/* Prints space separated elements of the queue on a single line*/
 void printQueue(const Queue *queue);
 
 
