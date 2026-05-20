@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include "../include/bobbersCalcInput.h"
 
+#include "../include/bobbersQueue.h"
+
 int button_1_input() {
     int button_1_Pin = 1;
     int button_2_Pin = 2;
@@ -12,15 +14,31 @@ int button_1_input() {
             delay(50);
         }
     }
-
     return button_1_Count;
 }
 
-char operand_input() {
-    return (char)(48 + (button_1_input() % 10));
+void add_num_to_queue(int num, Queue *queue) {
+    char temp[10];
+    int i = 0;
+
+    while (num > 0) {
+        temp[i++] = '0' + (num % 10);
+        num /= 10;
+    }
+
+    while (i > 0) {
+        pushQueueTail(queue, temp[i--]);
+    }
 }
 
-char operator_input() {
+void operand_input(Queue *queue) {
+    char num = (char)(48 + (button_1_input() % 10));
+
+    pushQueueTail(queue, num);
+}
+
+void operator_input(Queue *queue) {
     char operatorss[] = {'+', '-', '*', '/', '(', ')'};
-    return operatorss[button_1_input() % 6];
+    char operatorr = operatorss[button_1_input() % 6];
+    pushQueueTail(queue, operatorr);
 }

@@ -1,13 +1,18 @@
 #pragma once
+#include "bobbersQueue.h"
 
 /* Get input from button 1. For specifying operands and operators */
 int button_1_input();
+
+
+/* Adds numbers to queue (for operands) */
+void add_num_to_queue(int num, Queue *queue);
 
 /*
  * Get operand input
  * Number of button presses corresponds is the operand (domain restricted to integers greater to or equal to 1)
  */
-char operand_input();
+void operand_input(Queue *queue);
 
 /* Get operator input, also includes brackets.
  * Number of presses: operator
@@ -18,5 +23,5 @@ char operand_input();
  * 4: (
  * 5: )
  */
-char operator_input();
+void operator_input(Queue *queue);
 
