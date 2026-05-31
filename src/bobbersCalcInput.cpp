@@ -7,7 +7,7 @@ int button_1_input() {
     while (digitalRead(BUTTON_2_PIN) != HIGH) {
         if (digitalRead(BUTTON_1_PIN) == HIGH) {
             button_1_Count++;
-            delay(50);
+            delay(200);
         }
     }
     return button_1_Count;
