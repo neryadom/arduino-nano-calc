@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include "bobbersQueue.h"
 
-
 void resetQueue(Queue *queue){
     for (int i = 0; i < QUEUE_SIZE; i++){
         queue->data[i] = '.';

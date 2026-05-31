@@ -20,7 +20,6 @@ void add_num_to_queue(int num, Queue *queue) {
         temp[i++] = '0' + (num % 10);
         num /= 10;
     }
-
     while (i > 0) {
         pushQueueTail(queue, temp[i--]);
     }
@@ -32,7 +31,7 @@ void operand_input(Queue *queue) {
 }
 
 void operator_input(Queue *queue) {
-    char operators_array[] = {'+', '-', '*', '/', '(', ')'};
+    char operators_array[6] = {'+', '-', '*', '/', '(', ')'};
     char current_op = operators_array[button_1_input() % 6];
     pushQueueTail(queue, current_op);
 }
