@@ -23,17 +23,13 @@ void add_num_to_queue(int num, Queue *queue) {
     while (i > 0) pushQueueTail(queue, temp[i--]);
 }
 
-void add_op_to_queue(char op, Queue *queue) {
-    pushQueueTail(queue, op);
+void add_operator_to_queue(int op, Queue *queue) {
+    constexpr char operator_array[] = OPERATORS_ARRAY;
+    const char selected_op = operator_array[op % 6];
+    pushQueueTail(queue, selected_op);
 }
 
 void operand_input(Queue *queue) {
     char num = (char)(48 + (button_1_input() % 10));
     pushQueueTail(queue, num);
-}
-
-void operator_input(Queue *queue) {
-    char operators_array[] = OPERATORS_ARRAY;
-    char current_op = operators_array[button_1_input() % 6];
-    pushQueueTail(queue, current_op);
 }

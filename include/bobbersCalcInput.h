@@ -10,11 +10,14 @@
 int button_1_input();
 
 
-/* Adds numbers to queue (for operands) */
+/* Takes an integer and a queue pointer. It converts "num" to a char array, then pushes those chars on the queue */
 void add_num_to_queue(int num, Queue *queue);
 
-/* Adds operator to queue (for operators) */
-void add_op_to_queue(char op, Queue *queue);
+/* Takes an integer and a queue pointer.
+ * It takes the operator at index "op" in the Macro-defined array of operators.
+ * Then it pushes onto the queue the operator at that index
+ */
+void add_operator_to_queue(int op, Queue *queue);
 
 /*
  * Get operand input
