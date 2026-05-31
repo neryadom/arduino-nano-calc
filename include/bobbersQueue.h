@@ -1,6 +1,6 @@
 #pragma once
 
-constexpr int queueSize = 10; /* allow 10 elements on the operation queue */
+#define QUEUE_SIZE 10 /* allow 10 elements on the operation queue */
 
 
 /* QUEUE DECLARATION & METHODS DECLARATION START
@@ -11,7 +11,7 @@ constexpr int queueSize = 10; /* allow 10 elements on the operation queue */
  * Queue data is held in char array, for storing the operators (* - + /) as well as the numbers (0-9)
  */
 typedef struct queue_t {
-    char data[queueSize];
+    char data[QUEUE_SIZE];
     int head;
     int tail;
 } Queue;

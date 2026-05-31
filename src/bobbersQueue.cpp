@@ -1,10 +1,9 @@
 #include <stdio.h>
-
 #include "bobbersQueue.h"
 
 
 void resetQueue(Queue *queue){
-    for (int i = 0; i < queueSize; i++){
+    for (int i = 0; i < QUEUE_SIZE; i++){
         queue->data[i] = '.';
     }
     queue->head = -1;
@@ -12,11 +11,11 @@ void resetQueue(Queue *queue){
 }
 
 void pushQueueTail(Queue *queue, const char value){
-    if ((queue->tail + 1) % queueSize == queue->head) {
+    if ((queue->tail + 1) % QUEUE_SIZE == queue->head) {
         printf("FULL!! CANNOT INSERT %c... QUEUE FULL... RESETTING QUEUE... ALL VALUES ARE LOST\n", value);
         resetQueue(queue);
     } else {
-        queue->tail = (queue->tail + 1) % queueSize;
+        queue->tail = (queue->tail + 1) % QUEUE_SIZE;
         queue->data[queue->tail] = value;
         if (queue->head == -1) queue->head = 0;
     }
@@ -33,13 +32,13 @@ void popQueueHead(Queue *queue, char *retBuffer) {
         queue->head = -1;
         queue->tail = -1;
     } else {
-        queue->head = (queue->head + 1) % queueSize;
+        queue->head = (queue->head + 1) % QUEUE_SIZE;
     }
 }
 
 void printQueue(const Queue *queue) {
     printf("\nPRINTING QUEUE START\n");
-    for (int i = 0; i < queueSize; i++) {
+    for (int i = 0; i < QUEUE_SIZE; i++) {
         printf("%c ", queue->data[i]);
     }
     printf("\nPRINTING QUEUE END\n");

@@ -1,13 +1,11 @@
-#include <stdio.h>
 #include "../include/bobbersCalcInput.h"
-
 #include "../include/bobbersQueue.h"
+#include <Arduino.h>
 
 int button_1_input() {
     int button_1_Count = 0;
-
-    while (digitalRead(button_2_Pin) != HIGH) {
-        if (digitalRead(button_1_Pin) == HIGH) {
+    while (digitalRead(BUTTON_2_PIN) != HIGH) {
+        if (digitalRead(BUTTON_1_PIN) == HIGH) {
             button_1_Count++;
             delay(50);
         }
@@ -16,9 +14,8 @@ int button_1_input() {
 }
 
 void add_num_to_queue(int num, Queue *queue) {
-    char temp[10];
+    char temp[QUEUE_SIZE];
     int i = 0;
-
     while (num > 0) {
         temp[i++] = '0' + (num % 10);
         num /= 10;
@@ -31,12 +28,11 @@ void add_num_to_queue(int num, Queue *queue) {
 
 void operand_input(Queue *queue) {
     char num = (char)(48 + (button_1_input() % 10));
-
     pushQueueTail(queue, num);
 }
 
 void operator_input(Queue *queue) {
-    char operatorss[] = {'+', '-', '*', '/', '(', ')'};
-    char operatorr = operatorss[button_1_input() % 6];
-    pushQueueTail(queue, operatorr);
+    char operators_array[] = {'+', '-', '*', '/', '(', ')'};
+    char current_op = operators_array[button_1_input() % 6];
+    pushQueueTail(queue, current_op);
 }
