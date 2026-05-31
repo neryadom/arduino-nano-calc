@@ -23,6 +23,10 @@ void add_num_to_queue(int num, Queue *queue) {
     while (i > 0) pushQueueTail(queue, temp[i--]);
 }
 
+void add_op_to_queue(char op, Queue *queue) {
+    pushQueueTail(queue, op);
+}
+
 void operand_input(Queue *queue) {
     char num = (char)(48 + (button_1_input() % 10));
     pushQueueTail(queue, num);

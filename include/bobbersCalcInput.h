@@ -13,6 +13,9 @@ int button_1_input();
 /* Adds numbers to queue (for operands) */
 void add_num_to_queue(int num, Queue *queue);
 
+/* Adds operator to queue (for operators) */
+void add_op_to_queue(char op, Queue *queue);
+
 /*
  * Get operand input
  * Number of button presses corresponds is the operand (domain restricted to integers greater to or equal to 1)
