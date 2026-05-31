@@ -8,7 +8,9 @@ Queue queue;
 
 /* MAIN FUNCTIONS START */
 
-void setup() {}
+void setup() {
+	resetQueue(&queue);
+}
 
 void loop() {
 	int firstOperand = button_1_input();

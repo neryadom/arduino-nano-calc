@@ -1,8 +1,8 @@
 #pragma once
 #include "bobbersQueue.h"
 
-#define BUTTON_1_PIN  1
-#define BUTTON_2_PIN  2
+#define BUTTON_1_PIN  5
+#define BUTTON_2_PIN  6
 #define OPERATORS_ARRAY {'+', '-', '*', '/', '(', ')'}
 
 
