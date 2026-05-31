@@ -3,6 +3,8 @@
 
 #define BUTTON_1_PIN  1
 #define BUTTON_2_PIN  2
+#define OPERATORS_ARRAY {'+', '-', '*', '/', '(', ')'}
+
 
 /* Get input from button 1. For specifying operands and operators */
 int button_1_input();
