@@ -4,8 +4,6 @@
 #include "../include/bobbersQueue.h"
 
 int button_1_input() {
-    int button_1_Pin = 1;
-    int button_2_Pin = 2;
     int button_1_Count = 0;
 
     while (digitalRead(button_2_Pin) != HIGH) {

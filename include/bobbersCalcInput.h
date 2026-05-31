@@ -1,6 +1,9 @@
 #pragma once
 #include "bobbersQueue.h"
 
+constexpr int button_1_Pin = 1;
+constexpr int button_2_Pin = 2;
+
 /* Get input from button 1. For specifying operands and operators */
 int button_1_input();
 
