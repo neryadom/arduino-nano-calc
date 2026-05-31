@@ -10,23 +10,14 @@
 int button_1_input();
 
 
-/* Takes an integer and a queue pointer. It converts "num" to a char array, then pushes those chars on the queue */
+/* Takes an integer and a queue pointer.
+ * It converts "num" to a char array, then pushes those chars on the queue */
 void add_num_to_queue(int num, Queue *queue);
 
-/* Takes an integer and a queue pointer.
- * It takes the operator at index "op" in the Macro-defined array of operators.
- * Then it pushes onto the queue the operator at that index
- */
-void add_operator_to_queue(int op, Queue *queue);
-
 /*
- * Get operand input
- * Number of button presses corresponds is the operand (domain restricted to integers greater to or equal to 1)
- */
-void operand_input(Queue *queue);
-
-/* Get operator input, also includes brackets.
- * Number of presses: operator
+ * Takes an integer and a queue pointer.
+ * It takes the operator at index "op" in the Macro-defined array of operators then it pushes it onto the queue.
+ * The operators and their indices are defined as:
  * 0: +
  * 1: -
  * 2: *
@@ -34,5 +25,4 @@ void operand_input(Queue *queue);
  * 4: (
  * 5: )
  */
-void operator_input(Queue *queue);
-
+void add_operator_to_queue(int op, Queue *queue);
